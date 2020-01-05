@@ -16,8 +16,12 @@ mongoose.Promise = global.Promise;
 
 // connect to MongoDB
 mongoose.connect('mongodb://localhost/todo-api')
-  .then(() => console.log('connection succesful'))
+  .then(() => console.log('connection succesful piiiii'))
   .catch((err) => console.error(err));
+
+//route to info todos
+var todos = require('./routes/todos');
+app.use('/todos', todos);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
