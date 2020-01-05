@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,9 +16,11 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // connect to MongoDB
-mongoose.connect('mongodb://localhost/todo-api')
+mongoose.connect('mongodb://localhost/todo-api', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('connection succesful piiiii'))
   .catch((err) => console.error(err));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //route to info todos
 var todos = require('./routes/todos');
