@@ -1,9 +1,9 @@
 
-#MEAN: MongoDB, Express, Angular & Node
+# MEAN: MongoDB, Express, Angular & Node
 
 This is a template to work with RESTful in express connected to mongoDB, extract information and draw it with AngularJS.
 
-##Prerequisites
+## Prerequisites
 
 Is needed a mongoDB instanciation or agent
 Insert some info with the user of curl and PUT to make some examples:
@@ -12,7 +12,7 @@ Insert some info with the user of curl and PUT to make some examples:
 curl -XPOST http://localhost:3000/todos -d 'name=Master%20Routes&completed=false&note=soon'
 ```
 
-##Install
+## Install
 
 Start with 
 
